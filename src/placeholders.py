@@ -16,7 +16,7 @@ train_op = tf.train.AdamOptimizer().minimize(loss)
 sess = tf.Session()
 init = tf.initialize_all_variables()
 sess.run(init)
-from skdata.mnist.view import OfficialVectorClassification
+from skdata.mnist.views import OfficialVectorClassification
 # or, if you have an old version: from skdata.mnist.views import OfficialVectorClassification
 import numpy as np
 # load data entirely into memory
