@@ -10,7 +10,7 @@ labels_batch = tf.placeholder(dtype=tf.int32, shape=[None, ])
 # simple model
 w = tf.get_variable("w1", [28*28, 10])
 y_pred = tf.matmul(images_batch, w)
-loss = tf.nn.sparse_softmax_cross_entropy_with_logits(y_pred, labels_batch)
+loss = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y_pred, logits=labels_batch)
 loss_mean = tf.reduce_mean(loss)
 train_op = tf.train.AdamOptimizer().minimize(loss)
 sess = tf.Session()
